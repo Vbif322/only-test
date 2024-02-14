@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+$marginLeft: 320px;
+
 .App {
   position: fixed;
   width: 100%;
@@ -5,16 +8,136 @@
   left: 0;
   top: 0;
   background-color: #f4f5f9;
-  z-index: 10;
 }
 
 .App__container {
-  margin-left: 320px;
+  position: absolute;
+  margin-left: $marginLeft;
   margin-right: 160px;
-  width: 100%;
+  width: 1440px;
   height: 100%;
-  border: 1px solid #42567a;
+  // padding-left: 80px;
 }
+
+.App__vertical_vector_layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.App__horizont_vector {
+  position: fixed;
+  height: 1px;
+  width: 1440px;
+  top: 480px;
+  background-color: rgba($color: #42567A, $alpha: 0.1);
+  }
+
+  .App__vertical_vector {
+  height: 100%;
+  width: 1px;
+  background-color: rgba($color: #42567A, $alpha: 0.1);
+  }
+
+  .App__color_vector {
+    position: fixed;
+    height: 120px;
+    width: 5px;
+    top: 177px;
+    left: $marginLeft;
+    background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);    
+  }
+
+  .App__circle_vector {
+    position: fixed;
+    top: 215px;
+    left: 775px;
+    width: 528px;
+    height: 528px;
+    border: 1px solid rgba($color: #42567A, $alpha: 0.1);
+    border-radius: 50%;
+  }
+
+  .App__text_container {
+    position: fixed;
+    width: 353px;
+    height: 134px;
+    top: 170px;
+    left: calc($marginLeft + 80px);
+
+    p {
+      color: #42567A;
+      margin: 0;
+      font-family: PT Sans;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 67px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .App__control {
+    position: fixed;
+    width: 120px;
+    height: 88px;
+    left: calc($marginLeft + 80px);
+    bottom: 295px;
+
+    p {
+      margin: 0 0 14px 0;
+      font-family: PT Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #42567A;
+
+    }
+  }
+
+  .App__control__button_container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .App__control__button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba($color: #42567A80, $alpha: 0.5);
+    background-color: transparent;
+  }
+
+  .App__date_container {
+    position: fixed;
+    top: 400px;
+    left: 550px;
+    width: 973px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .App__slider {
+    position: fixed;
+    max-width: 1320px;
+    bottom: 104px;
+    left: calc($marginLeft + 80px);
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: none;
+    }
+  }
 
 /* .App-logo {
   height: 40vmin;
