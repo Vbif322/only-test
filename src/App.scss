@@ -127,6 +127,14 @@ $marginLeft: 320px;
   left: calc($marginLeft + 80px);
 }
 
+.App__Wheel_container {
+  position: fixed;
+  top: 215px;
+  left: calc($marginLeft + 455px);
+  width: 530px;
+  height: 530px;
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

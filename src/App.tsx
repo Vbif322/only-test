@@ -3,6 +3,7 @@ import "./App.scss";
 import Date from "./components/Date/Date";
 import Slider from "./components/Slider/Slider";
 import { cardArray } from "./assets/data";
+import Wheel from "./components/Wheel/Wheel";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
           <div className="App__vertical_vector"></div>
           <div className="App__vertical_vector"></div>
           <div className="App__vertical_vector"></div>
+        </div>
+        <div className="App__Wheel_container">
+          <Wheel />
         </div>
         <div className="App__circle_vector"></div>
         <div className="App__horizont_vector"></div>

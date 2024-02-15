@@ -19,12 +19,13 @@ const Slider = ({ cardArray }) => {
         spaceBetween={80}
         slidesPerView={3}
         navigation
+        grabCursor
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {cardArray.map((card, i) => {
           return (
-            <SwiperSlide key={card.year + i} virtualIndex={i}>
+            <SwiperSlide key={card.year + i}>
               {<Card year={card.year} text={card.text} />}
             </SwiperSlide>
           );
