@@ -133,6 +133,7 @@ $marginLeft: 320px;
   left: calc($marginLeft + 455px);
   width: 530px;
   height: 530px;
+  z-index: 10;
 }
 
 /* .App-logo {

@@ -1,12 +1,5 @@
 @keyframes scale {
-  0% {
-    width: 4px;
-    height: 4px;
-    background-color: transparent;
-  }
   100% {
-    width: 56px;
-    height: 56px;
     background-color: transparent;
     border: 1px solid #42567a;
   }
@@ -27,29 +20,28 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  // border: 1px solid black;
 }
 
 .Wheel__sector__circle {
+  margin-right: 26px;
   width: 4px;
   height: 4px;
   background-color: #42567a;
-  transform: translate(-25px);
-  border: 1px solid #42567a;
   border-radius: 50%;
 
-  //   &:hover {
-  // transform: scale(14) translate(0, 0);
-  // background-color: transparent;
-  // border: 1px solid #42567a;
-  // animation: 0.5s ease-in scale;
-  //   }
+    &:hover {
+      transform: scale(14);
+      transition: transform 0.5s ease-in-out;
+      animation: 0.3s ease-in forwards scale;
+    }
 }
 
 .active {
   width: 56px;
   height: 56px;
   background-color: transparent;
-  transform: translate(0);
+  border: 1px solid #42567a;
 }
 
 .Wheel__sector__circle__num {

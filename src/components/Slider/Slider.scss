@@ -1,6 +1,6 @@
 %swiper-btn {
-  position: absolute;
-  top: var(--swiper-navigation-top-offset, 30%);
+  position: fixed;
+  bottom: 158px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,14 +13,20 @@
 
 .swiper-button-prev {
   @extend %swiper-btn;
-  left: var(--swiper-navigation-sides-offset, 0);
-  right: auto;
+  // left: var(--swiper-navigation-sides-offset, 0px);
+  left: 335px;
+
+  .Slider__button-next-icon {
+    height: 10px;
+  }
+
 }
 
 .swiper-button-next {
   @extend %swiper-btn;
-  left: auto;
-  right: var(--swiper-navigation-sides-offset, 0);
+  // left: auto;
+  // right: var(--swiper-navigation-sides-offset, 0px);
+  right: 180px;
 }
 
 .swiper-button-disabled {

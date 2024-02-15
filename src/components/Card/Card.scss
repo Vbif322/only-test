@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .Card__container {
-  max-height: 135px;
-  max-width: 400px;
+  height: 135px;
+  width: 400px;
 }
 
 .Card__year {
@@ -16,6 +16,7 @@
 }
 
 .Card__paragraph {
+  margin-top: 15px;
   color: #42567a;
   font-family: PT Sans;
   font-size: 20px;
