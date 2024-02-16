@@ -1,16 +1,12 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "./Slider.scss";
 import "swiper/css";
-// import "swiper/css/navigation";
 import Card from "../Card/Card";
 import { useRef } from "react";
-import { ReactComponent as Next } from "../../assets/next.svg";
 import Button from "../Button/Button";
 
 const Slider = ({ cardArray }) => {
-  const swiper = useSwiper();
-
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
@@ -30,8 +26,10 @@ const Slider = ({ cardArray }) => {
         }}
         grabCursor
         onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = navigationPrevRef.current;
-          swiper.params.navigation.nextEl = navigationNextRef.current;
+          if (typeof swiper.params.navigation === "object") {
+            swiper.params.navigation.prevEl = navigationPrevRef.current;
+            swiper.params.navigation.nextEl = navigationNextRef.current;
+          }
         }}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
@@ -44,14 +42,14 @@ const Slider = ({ cardArray }) => {
           );
         })}
         <div ref={navigationPrevRef} className="swiper-button-prev">
-          <Button deg={180} height={10}></Button>
+          <Button deg={180} color="#3877EE" />
         </div>
         <div
           ref={navigationNextRef}
           className="swiper-button-next"
           onClick={btnHandler}
         >
-          <Button deg={0} height={10} color={"#3877EE"} />
+          <Button deg={0} color="#3877EE" />
         </div>
       </Swiper>
     </div>

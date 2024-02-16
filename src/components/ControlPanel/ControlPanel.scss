@@ -1,0 +1,42 @@
+$marginLeft: 320px;
+
+.Control {
+  position: fixed;
+  width: 120px;
+  height: 88px;
+  left: calc($marginLeft + 80px);
+  bottom: 295px;
+
+  p {
+    margin: 0 0 14px 0;
+    font-family: PT Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #42567a;
+  }
+}
+
+.Control__button_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Control__button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba($color: #42567a80, $alpha: 0.5);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled {
+  border-color: rgba($color: #42567a80, $alpha: 0.25);
+}

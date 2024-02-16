@@ -1,6 +1,8 @@
 @keyframes scale {
   100% {
-    background-color: transparent;
+    width: 56px;
+    height: 56px;
+    background-color: #f4f5f9;
     border: 1px solid #42567a;
   }
 }
@@ -17,38 +19,58 @@
   height: 56px;
   transform-origin: 0 50%;
   position: absolute;
-  display: flex;
-  justify-content: end;
-  align-items: center;
   // border: 1px solid black;
 }
 
+.Wheel__sector_container {
+  position: relative;
+  left: calc(100% - 56px);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .Wheel__sector__circle {
-  margin-right: 26px;
   width: 4px;
   height: 4px;
   background-color: #42567a;
   border-radius: 50%;
-
-    &:hover {
-      transform: scale(14);
-      transition: transform 0.5s ease-in-out;
-      animation: 0.3s ease-in forwards scale;
-    }
 }
 
 .active {
   width: 56px;
   height: 56px;
-  background-color: transparent;
+  background-color: #f4f5f9;
   border: 1px solid #42567a;
+
+  .Wheel__sector__circle__num {
+    display: block;
+  }
+}
+
+.activate {
+  animation: 0.3s ease-in forwards scale;
+  cursor: pointer;
+
+  .Wheel__sector__circle__num {
+    display: block;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .Wheel__sector__circle__num {
+  display: none;
   position: absolute;
-  transform: translate(22px, 13px) rotate(60deg);
+  top: 13px;
+  left: 22px;
 
   p {
+    color: #42567a;
     font-family: PT Sans;
     font-size: 20px;
     font-weight: 400;

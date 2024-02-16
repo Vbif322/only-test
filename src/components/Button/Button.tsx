@@ -1,15 +1,14 @@
-import React from "react";
-import { ReactComponent as Next } from "../../assets/next.svg";
+import { ReactComponent as Next } from "../../assets/vector.svg";
 
-type Props = { deg: number; height: number; color?: string };
+type Props = { deg: number; color?: string; disabled?: boolean };
 
-const Button = ({ deg, height, color }: Props) => {
+const Button = ({ deg, color, disabled }: Props) => {
   return (
     <Next
       style={{
         transform: `rotate(${deg}deg)`,
-        height: `${height}px`,
-        fill: color,
+        stroke: color,
+        opacity: disabled ? "50%" : "1000",
       }}
     />
   );
