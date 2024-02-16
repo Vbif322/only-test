@@ -4,8 +4,11 @@ import Slider from "./components/Slider/Slider";
 import { cardArray } from "./assets/data";
 import Wheel from "./components/Wheel/Wheel";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
+import { useContext } from "react";
+import { DataContext } from "./context/context";
 
 function App() {
+  const { DATA, num } = useContext(DataContext);
   return (
     <div className="App">
       <div className="App__container">

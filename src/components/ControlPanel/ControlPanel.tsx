@@ -1,11 +1,12 @@
-import { useState } from "react";
-import Button from "../Button/Button";
+import { useContext } from "react";
+import CircleButton from "../Button/CircleButton";
 import "./ControlPanel.scss";
+import { DataContext } from "../../context/context";
 
 type Props = {};
 
 const ControlPanel = (props: Props) => {
-  const [num, setNum] = useState(1);
+  const { num, setNum } = useContext(DataContext);
 
   const onNextClick = (e) => {
     if (num === 6) {
@@ -24,10 +25,10 @@ const ControlPanel = (props: Props) => {
       <p>0{num}/06</p>
       <div className="Control__button_container">
         <div className="Control__button" onClick={onPrevClick}>
-          <Button deg={180} color={"#42567A"} disabled={num === 1} />
+          <CircleButton deg={180} color={"#42567A"} disabled={num === 1} />
         </div>
-        <div className="Control__button disabled" onClick={onNextClick}>
-          <Button deg={0} color={"#42567A"} disabled={num === 6} />
+        <div className="Control__button" onClick={onNextClick}>
+          <CircleButton deg={0} color={"#42567A"} disabled={num === 6} />
         </div>
       </div>
     </div>

@@ -4,15 +4,11 @@ import "./Slider.scss";
 import "swiper/css";
 import Card from "../Card/Card";
 import { useRef } from "react";
-import Button from "../Button/Button";
+import Button from "../Button/CircleButton";
 
 const Slider = ({ cardArray }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
-
-  const btnHandler = () => {
-    // swiper.slideNext();
-  };
 
   return (
     <div className="Slider__container">
@@ -44,11 +40,7 @@ const Slider = ({ cardArray }) => {
         <div ref={navigationPrevRef} className="swiper-button-prev">
           <Button deg={180} color="#3877EE" />
         </div>
-        <div
-          ref={navigationNextRef}
-          className="swiper-button-next"
-          onClick={btnHandler}
-        >
+        <div ref={navigationNextRef} className="swiper-button-next">
           <Button deg={0} color="#3877EE" />
         </div>
       </Swiper>
