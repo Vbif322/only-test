@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "./Slider.scss";
-import "swiper/css";
+// import "swiper/css";
 import Card from "../Card/Card";
 import { useEffect, useRef } from "react";
 import Button from "../Button/CircleButton";
@@ -12,16 +12,16 @@ const Slider = ({ cardArray }) => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
-    sliderRef.current.classList.add("Slider__container");
+    sliderRef.current.classList.add("slider__animation");
     const timer = setTimeout(
-      () => sliderRef.current.classList.remove("Slider__container"),
+      () => sliderRef.current.classList.remove("slider__animation"),
       1000
     );
     return () => clearTimeout(timer);
   }, [cardArray]);
 
   return (
-    <div ref={sliderRef}>
+    <div ref={sliderRef} className="slider__container">
       <Swiper
         modules={[Navigation]}
         spaceBetween={80}

@@ -9,7 +9,11 @@ const arr = ["Кино", "Наука", "Музыка", "Литература", "
 const Wheel = (props: Props) => {
   const [angle, setAngle] = useState(0);
   const [nextAngle, setNextAngle] = useState(0);
-  const { setNum } = useContext(DataContext);
+  const { setNum, num } = useContext(DataContext);
+
+  useEffect(() => {
+    setNextAngle(angle + 300 - (angle + 60 * (num - 1)));
+  }, [num]);
 
   useEffect(() => {
     nextAngle !== angle &&

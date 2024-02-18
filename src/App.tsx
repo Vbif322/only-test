@@ -5,6 +5,7 @@ import Wheel from "./components/Wheel/Wheel";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
 import { useContext } from "react";
 import { DataContext } from "./context/context";
+import VerticalVector from "./components/VerticalVector/VerticalVector";
 
 function App() {
   const { DATA, num } = useContext(DataContext);
@@ -12,9 +13,9 @@ function App() {
     <div className="App">
       <div className="App__container">
         <div className="App__vertical_vector_layout">
-          <div className="App__vertical_vector"></div>
-          <div className="App__vertical_vector"></div>
-          <div className="App__vertical_vector"></div>
+          <VerticalVector />
+          <VerticalVector />
+          <VerticalVector />
         </div>
         <div className="App__Wheel_container">
           <Wheel />

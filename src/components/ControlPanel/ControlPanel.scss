@@ -1,10 +1,8 @@
-$marginLeft: 320px;
-
 .Control {
-  position: fixed;
+  position: absolute;
   width: 120px;
   height: 88px;
-  left: calc($marginLeft + 80px);
+  left: 80px;
   bottom: 295px;
 
   p {
@@ -27,8 +25,9 @@ $marginLeft: 320px;
 }
 
 .Control__button {
-  width: 50px;
-  height: 50px;
+  $radius: 25px;
+  width: $radius * 2;
+  height: $radius * 2;
   border-radius: 50%;
   border: 1px solid rgba($color: #42567a80, $alpha: 0.5);
   background-color: transparent;
@@ -39,4 +38,36 @@ $marginLeft: 320px;
 
 .disabled {
   border-color: rgba($color: #42567a80, $alpha: 0.25);
+}
+
+@media (max-width: 580px) {
+  .Control {
+    position: absolute;
+    left: 20px;
+    top: 505px;
+    p {
+      font-family: PT Sans;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .Control__button_container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .Control__button {
+    $radius: 12.5px;
+    width: $radius * 2;
+    height: $radius * 2;
+    border-radius: 50%;
+    border: 1px solid rgba($color: #42567a80, $alpha: 0.5);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

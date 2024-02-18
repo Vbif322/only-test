@@ -1,22 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-$marginLeft: 320px;
 
 .App {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
+  right: 0;
   top: 0;
+  background-size: 100%;
   background-color: #f4f5f9;
 }
 
 .App__container {
   position: absolute;
-  margin-left: $marginLeft;
+  margin-left: 320px;
   margin-right: 160px;
   width: 1440px;
   height: 100%;
-  // padding-left: 80px;
 }
 
 .App__vertical_vector_layout {
@@ -27,45 +26,39 @@ $marginLeft: 320px;
 }
 
 .App__horizont_vector {
-  position: fixed;
+  position: absolute;
   height: 1px;
   width: 1440px;
   top: 480px;
   background-color: rgba($color: #42567a, $alpha: 0.1);
 }
 
-.App__vertical_vector {
-  height: 100%;
-  width: 1px;
-  background-color: rgba($color: #42567a, $alpha: 0.1);
-}
-
 .App__color_vector {
-  position: fixed;
+  position: absolute;
   height: 120px;
   width: 5px;
   top: 177px;
-  left: $marginLeft;
+  left: 0;
   background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
 }
 
 .App__circle_vector {
-  position: fixed;
+  $radius: 264px;
+  position: absolute;
   top: 215px;
-  left: 775px;
-  width: 528px;
-  height: 528px;
+  left: calc(50% - $radius);
+  width: $radius * 2;
+  height: $radius * 2;
   border: 1px solid rgba($color: #42567a, $alpha: 0.1);
   border-radius: 50%;
 }
 
 .App__text_container {
-  position: fixed;
+  position: absolute;
   width: 353px;
   height: 134px;
   top: 170px;
-  left: calc($marginLeft + 80px);
-
+  left: 80px;
   p {
     color: #42567a;
     margin: 0;
@@ -79,9 +72,9 @@ $marginLeft: 320px;
 }
 
 .App__date_container {
-  position: fixed;
+  position: absolute;
   top: 400px;
-  left: 550px;
+  left: 220px;
   width: 973px;
   display: flex;
   justify-content: space-between;
@@ -89,52 +82,83 @@ $marginLeft: 320px;
 
 .App__slider {
   position: absolute;
-  max-width: 1420px;
+  max-width: 100%;
   bottom: 104px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .App__Wheel_container {
-  position: fixed;
+  position: absolute;
   top: 215px;
-  left: calc($marginLeft + 455px);
+  left: 455px;
   width: 530px;
   height: 530px;
   z-index: 10;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 580px) {
+  .App__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .App__vertical_vector_layout {
+    display: none;
+  }
+
+  .App__color_vector {
+    display: none;
+  }
+
+  .App__Wheel_container {
+    display: none;
+  }
+
+  .App__horizont_vector {
+    position: absolute;
+    height: 1px;
+    width: 280px;
+    top: 293px;
+    left: calc((100% - 340px) / 2);
+    background-color: rgba($color: #42567a, $alpha: 0.1);
+  }
+
+  .App__circle_vector {
+    display: none;
+  }
+
+  .App__date_container {
+    position: absolute;
+    top: 163px;
+    left: calc((100% - 340px) / 2);
+    width: 273px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .App__text_container {
+    position: absolute;
+    width: 123px;
+    height: 134px;
+    top: 59px;
+    left: 20px;
+    p {
+      font-family: PT Sans;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .App__slider {
+    position: absolute;
+    width: 100%;
+    height: 114px;
+    top: 313px;
+    left: 20px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

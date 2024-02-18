@@ -1,8 +1,19 @@
 .Date__paragraph {
+  font-family: PT Sans;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 160px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+@media (max-width: 580px) {
+  .Date__paragraph {
     font-family: PT Sans;
-    font-size: 200px;
+    font-size: 56px;
     font-weight: 700;
-    line-height: 160px;
+    line-height: 72px;
     letter-spacing: -0.02em;
     text-align: center;
+  }
 }
