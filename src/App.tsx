@@ -1,7 +1,6 @@
 import "./App.scss";
 import Date from "./components/Date/Date";
 import Slider from "./components/Slider/Slider";
-import { cardArray } from "./assets/data";
 import Wheel from "./components/Wheel/Wheel";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
 import { useContext } from "react";
@@ -28,11 +27,11 @@ function App() {
         </div>
         <ControlPanel />
         <div className="App__date_container">
-          <Date color={"#5D5FEF"} number={2015} />
-          <Date color={"#EF5DA8"} number={2022} />
+          <Date color={"#5D5FEF"} number={DATA[num - 1].years[0]} />
+          <Date color={"#EF5DA8"} number={DATA[num - 1].years[1]} />
         </div>
         <div className="App__slider">
-          <Slider cardArray={cardArray} />
+          <Slider cardArray={DATA[num - 1].array} />
         </div>
       </div>
     </div>

@@ -19,7 +19,6 @@
   height: 56px;
   transform-origin: 0 50%;
   position: absolute;
-  // border: 1px solid black;
 }
 
 .Wheel__sector_container {
@@ -74,6 +73,22 @@
     font-family: PT Sans;
     font-size: 20px;
     font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+  }
+}
+
+.Wheel__sector__circle__category {
+  position: absolute;
+
+  p {
+    position: relative;
+    left: 115px;
+    width: 150px;
+    color: #42567a;
+    font-family: PT Sans;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 30px;
     letter-spacing: 0em;
   }

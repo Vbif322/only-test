@@ -88,10 +88,11 @@ $marginLeft: 320px;
 }
 
 .App__slider {
-  position: fixed;
-  max-width: 1300px;
+  position: absolute;
+  max-width: 1420px;
   bottom: 104px;
-  left: calc($marginLeft + 80px);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App__Wheel_container {
