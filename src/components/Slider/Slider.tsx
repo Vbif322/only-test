@@ -1,12 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "./Slider.scss";
-// import "swiper/css";
 import Card from "../Card/Card";
 import { useEffect, useRef } from "react";
 import Button from "../Button/CircleButton";
 
-const Slider = ({ cardArray }) => {
+type card = {
+  year: number;
+  text: string;
+};
+
+const Slider = ({ cardArray }: { cardArray: card[] }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   const sliderRef = useRef(null);
@@ -37,10 +41,8 @@ const Slider = ({ cardArray }) => {
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }
         }}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
       >
-        {cardArray.map((card, i) => {
+        {cardArray.map((card, i: number) => {
           return (
             <SwiperSlide key={card.year + i}>
               {<Card year={card.year} text={card.text} />}

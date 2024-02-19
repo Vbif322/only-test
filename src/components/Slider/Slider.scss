@@ -26,6 +26,10 @@
   animation: opacity 0.5s alternate infinite;
 }
 
+.slider__container {
+  height: 100%;
+}
+
 .swiper {
   margin-left: 80px;
   margin-right: 80px;
@@ -81,9 +85,10 @@
   .swiper {
     margin-left: 0;
     margin-right: 0;
+    position: unset;
   }
 
-  // .swiper-slide {
-  //   width: 170px !important;
-  // }
+  .swiper-slide {
+    width: 170px !important;
+  }
 }
